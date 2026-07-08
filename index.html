@@ -188,7 +188,118 @@
     </style>
 </head>
 
-<body>
+<body<section id="locals-convertibles">
+    <h2>Projecte Locals Convertibles – EARLY</h2>
+    <p>
+        App senzilla dins l’ecosistema EARLY per gestionar la cerca, classificació i contacte
+        de locals convertibles a habitatge a Sant Cugat, utilitzant portals fiables (Idealista,
+        Habitaclia, Fotocasa) i criteris tècnics de viabilitat.
+    </p>
+
+    <div class="grid">
+        <div class="card" style="border-left:6px solid var(--early-green);">
+            <h3>Locals econòmics</h3>
+            <p>
+                Locals amb preus per sota de la mitjana del municipi, prioritzant:
+            </p>
+            <ul>
+                <li>Renda mensual baixa</li>
+                <li>Superfície mínima viable (≥ 40 m²)</li>
+                <li>Planta baixa</li>
+                <li>Façana accessible</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-left:6px solid var(--early-blue);">
+            <h3>Locals amb possibilitat de canvi d’ús</h3>
+            <p>
+                Locals que compleixen o poden complir:
+            </p>
+            <ul>
+                <li>Façana ≥ 3 metres</li>
+                <li>Ventilació natural</li>
+                <li>Alçada ≥ 2,5 m</li>
+                <li>Distribució adaptable</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-left:6px solid var(--early-orange);">
+            <h3>Locals amb cèdula o sol·licitables</h3>
+            <p>
+                Locals que ja tenen o poden obtenir:
+            </p>
+            <ul>
+                <li>Cèdula d’habitabilitat vigent</li>
+                <li>Projecte tècnic de canvi d’ús</li>
+                <li>Informe favorable d’arquitecte</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 style="margin-top:40px;">Paraules clau per a la cerca</h3>
+    <p>
+        Utilitzades en portals com Idealista, Habitaclia i Fotocasa:
+    </p>
+    <ul>
+        <li>"local comercial"</li>
+        <li>"planta baixa"</li>
+        <li>"loft"</li>
+        <li>"baixos convertibles"</li>
+        <li>"apto per canvi d’ús"</li>
+        <li>"local amb ventilació"</li>
+        <li>"local diàfan"</li>
+    </ul>
+
+    <h3 style="margin-top:40px;">Fitxa tipus Habitaclia</h3>
+    <p>
+        Estructura de fitxa que EARLY genera per cada local:
+    </p>
+    <ul>
+        <li>Nom del carrer / zona</li>
+        <li>Preu mensual</li>
+        <li>Metres quadrats</li>
+        <li>Tipus de façana</li>
+        <li>Ventilació</li>
+        <li>Possibilitat de canvi d’ús (Sí / Pot ser / No)</li>
+        <li>Cèdula d’habitabilitat (Sí / No / Sol·licitable)</li>
+        <li>Enllaç a l’anunci</li>
+        <li>Mail per contactar agent</li>
+    </ul>
+
+    <h3 style="margin-top:40px;">Flux dins l’app EARLY</h3>
+    <div class="grid">
+        <div class="card">
+            <h3>Cerca automàtica</h3>
+            <p>
+                Cerca automàtica a portals amb paraules clau definides per EARLY.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Classificació automàtica</h3>
+            <p>
+                Classificació segons els tres blocs principals: econòmics, canvi d’ús, cèdula.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Fitxa resum</h3>
+            <p>
+                Generació de fitxa resum per cada local detectat amb criteris tècnics integrats.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Contacte i arxiu intern</h3>
+            <p>
+                Botó de contacte amb l’agent (mail) i arxiu intern per guardar locals favorits.
+            </p>
+        </div>
+    </div>
+
+    <p style="margin-top:30px;font-style:italic;">
+        Estat del projecte: classificació definida, paraules clau establertes, estructura de fitxa preparada
+        i portals principals confirmats. Proper pas: integrar la cerca automatitzada i generar les primeres
+        fitxes amb dades reals de Sant Cugat.
+    </p>
+</section>
 
     <!-- MENÚ SUPERIOR -->
     <nav>
