@@ -5,6 +5,9 @@
     <title>EARLY — Sistema d’Oportunitats Immobiliàries</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- TIPOGRAFIA INSTITUCIONAL -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         /* PALETA INSTITUCIONAL EARLY */
         :root {
@@ -19,7 +22,7 @@
         /* GLOBAL */
         body {
             margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
+            font-family: "Inter", "Segoe UI", Arial, sans-serif;
             background: var(--early-bg);
             color: var(--early-text);
         }
@@ -54,11 +57,17 @@
             color: var(--early-orange);
         }
 
-        /* HERO */
+        /* HERO AMB IMATGE */
         .hero {
             text-align: center;
-            padding: 80px 20px;
-            background: var(--early-blue);
+            padding: 120px 20px;
+            background: linear-gradient(
+                rgba(26, 167, 200, 0.85),
+                rgba(26, 167, 200, 0.85)
+            ),
+            url('https://images.unsplash.com/photo-1526401485004-2fda9f6d2f6b?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
         }
 
@@ -97,14 +106,14 @@
             color: white;
         }
 
-        /* SECTIONS */
+        /* SECCIONS AMB ESPAIAT PREMIUM */
         section {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 60px auto;
             background: white;
-            padding: 40px;
-            border-radius: 14px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
         }
 
         h2 {
@@ -126,12 +135,12 @@
             margin-top: 30px;
         }
 
-        /* CARDS */
+        /* CARDS REFINADES */
         .card {
             background: var(--early-gray);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.06);
             border-left: 6px solid var(--early-blue);
         }
 
@@ -145,7 +154,7 @@
             font-size: 16px;
         }
 
-        /* FORM */
+        /* FORMULARI */
         form input,
         form textarea {
             padding: 12px;
@@ -195,7 +204,7 @@
         </div>
     </nav>
 
-    <!-- HERO PRINCIPAL -->
+    <!-- HERO -->
     <section class="hero">
         <h1>EARLY</h1>
         <h2>Sistema d’Oportunitats Immobiliàries — Cicle Complet Tancat</h2>
@@ -216,30 +225,15 @@
         </p>
     </section>
 
-    <!-- ARQUITECTURA DEL SISTEMA -->
+    <!-- ARQUITECTURA -->
     <section id="arquitectura">
         <h2>Arquitectura del Sistema</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Ingesta i Detecció</h3>
-                <p>Captura de fluxos d’oportunitats immobiliàries des de fonts institucionals i canals externs.</p>
-            </div>
-            <div class="card">
-                <h3>Cicle Modal</h3>
-                <p>Processament modal per classificar, prioritzar i estructurar les oportunitats en temps quasi real.</p>
-            </div>
-            <div class="card">
-                <h3>Validació Adversa</h3>
-                <p>Contrastos adversos per descartar falsos positius i consolidar només oportunitats robustes.</p>
-            </div>
-            <div class="card">
-                <h3>Restauració de Cadència</h3>
-                <p>Reequilibri de ritme operatiu per evitar saturació i mantenir un flux institucional sostenible.</p>
-            </div>
-            <div class="card">
-                <h3>Clausura Institucional</h3>
-                <p>Tancament del cicle amb presentació formal d’oportunitats i traçabilitat completa.</p>
-            </div>
+            <div class="card"><h3>Ingesta i Detecció</h3><p>Captura de fluxos d’oportunitats immobiliàries.</p></div>
+            <div class="card"><h3>Cicle Modal</h3><p>Classificació i priorització en temps quasi real.</p></div>
+            <div class="card"><h3>Validació Adversa</h3><p>Contrastos adversos per descartar falsos positius.</p></div>
+            <div class="card"><h3>Restauració de Cadència</h3><p>Equilibri del ritme operatiu.</p></div>
+            <div class="card"><h3>Clausura Institucional</h3><p>Presentació formal i traçabilitat completa.</p></div>
         </div>
     </section>
 
@@ -248,64 +242,39 @@
         <h2>Documentació</h2>
         <p>
             La documentació d’EARLY descriu el cicle complet, els components tècnics, els fluxos institucionals i els criteris de validació.
-            Inclou diagrames d’arquitectura, definició de mòduls, protocols de validació adversa i esquemes de clausura.
         </p>
     </section>
 
-    <!-- DEMO DEL SISTEMA -->
+    <!-- DEMO -->
     <section id="demo">
         <h2>Demo del Sistema</h2>
         <p>
-            La demo mostra el recorregut complet d’una oportunitat immobiliària dins d’EARLY: des de la detecció inicial fins a la presentació institucional.
-            Inclou exemples de fluxos, pantalles de seguiment i resultats de validació.
+            La demo mostra el recorregut complet d’una oportunitat immobiliària dins d’EARLY.
         </p>
     </section>
 
     <!-- FAQ -->
     <section id="faq">
         <h2>FAQ — Preguntes Freqüents</h2>
-        <div class="card">
-            <h3>Quant tarda EARLY?</h3>
-            <p>Menys d’un minut per detectar, validar i presentar una oportunitat immobiliària.</p>
-        </div>
-        <div class="card">
-            <h3>Quina tecnologia utilitza?</h3>
-            <p>Arquitectura modal, validació adversa, cadència restaurada i pipeline institucional.</p>
-        </div>
-        <div class="card">
-            <h3>És escalable?</h3>
-            <p>El sistema està dissenyat per operar en entorns institucionals amb alta demanda.</p>
-        </div>
+        <div class="card"><h3>Quant tarda EARLY?</h3><p>Menys d’un minut.</p></div>
+        <div class="card"><h3>Quina tecnologia utilitza?</h3><p>Arquitectura modal i validació adversa.</p></div>
+        <div class="card"><h3>És escalable?</h3><p>Operatiu en entorns institucionals.</p></div>
     </section>
 
     <!-- ROADMAP -->
     <section id="roadmap">
         <h2>Roadmap del Sistema</h2>
         <div class="grid">
-            <div class="card" style="border-left:6px solid var(--early-green);">
-                <h3>Fase 1</h3>
-                <p>Implementació del motor modal i ingestes.</p>
-            </div>
-            <div class="card" style="border-left:6px solid var(--early-blue);">
-                <h3>Fase 2</h3>
-                <p>Validació adversa i restauració de cadència.</p>
-            </div>
-            <div class="card" style="border-left:6px solid var(--early-orange);">
-                <h3>Fase 3</h3>
-                <p>Frontend institucional i presentació d’oportunitats.</p>
-            </div>
-            <div class="card" style="border-left:6px solid var(--early-green);">
-                <h3>Fase 4</h3>
-                <p>Clausura institucional del cicle complet.</p>
-            </div>
+            <div class="card" style="border-left:6px solid var(--early-green);"><h3>Fase 1</h3><p>Motor modal.</p></div>
+            <div class="card" style="border-left:6px solid var(--early-blue);"><h3>Fase 2</h3><p>Validació adversa.</p></div>
+            <div class="card" style="border-left:6px solid var(--early-orange);"><h3>Fase 3</h3><p>Frontend institucional.</p></div>
+            <div class="card" style="border-left:6px solid var(--early-green);"><h3>Fase 4</h3><p>Clausura del cicle.</p></div>
         </div>
     </section>
 
     <!-- CONTACTE -->
     <section id="contacte">
         <h2>Contacte</h2>
-        <p>Envia una consulta a l’equip institucional d’EARLY.</p>
-
         <form>
             <input type="text" placeholder="Nom">
             <input type="email" placeholder="Email">
