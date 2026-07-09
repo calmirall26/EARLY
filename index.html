@@ -6,6 +6,10 @@
     <title>EARLY — Sistema d’Oportunitats Immobiliàries</title>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
             margin: 0;
@@ -14,7 +18,7 @@
             color: #111827;
         }
 
-        /* MENÚ SUPERIOR PREMIUM */
+        /* MENÚ PREMIUM */
         nav {
             background: rgba(15,23,42,0.85);
             backdrop-filter: blur(12px);
@@ -25,7 +29,8 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.25);
         }
-        nav ul {
+
+        nav ul.menu {
             list-style: none;
             display: flex;
             gap: 32px;
@@ -33,6 +38,7 @@
             padding: 0;
             align-items: center;
         }
+
         nav .brand {
             font-weight: 700;
             font-size: 20px;
@@ -40,18 +46,20 @@
             color: #38bdf8;
             letter-spacing: 0.03em;
         }
+
         .nav-link {
             position: relative;
             padding-bottom: 4px;
             transition: color 0.25s ease;
-            text-decoration: none;
+            cursor: pointer;
             color: #e5e7eb;
-            font-weight: 500;
-            font-size: 14px;
+            text-decoration: none;
         }
+
         .nav-link:hover {
             color: #38bdf8;
         }
+
         .nav-link::after {
             content: "";
             position: absolute;
@@ -62,100 +70,108 @@
             background: #38bdf8;
             transition: width 0.25s ease;
         }
+
         .nav-link:hover::after {
             width: 100%;
         }
 
-        /* SECCIONS GENERALS */
+        /* SUBMENÚS */
+        .submenu {
+            position: relative;
+        }
+
+        .submenu ul {
+            display: none;
+            position: absolute;
+            background: #0f172a;
+            padding: 12px 0;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+            list-style: none;
+            margin: 0;
+            min-width: 220px;
+        }
+
+        .submenu:hover ul {
+            display: block;
+        }
+
+        .submenu ul li {
+            padding: 8px 16px;
+        }
+
+        .submenu ul li a {
+            color: #e5e7eb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .submenu ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* PORTADA PREMIUM */
+        #inici {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e5e7eb;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #inici h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        /* SECCIONS */
         section {
             padding: 48px 20px;
             max-width: 960px;
             margin: 0 auto;
         }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
+
         h2 {
             font-size: 28px;
             margin-bottom: 12px;
         }
-        h3 {
-            font-size: 20px;
-            margin-top: 24px;
-            margin-bottom: 8px;
-        }
-        p {
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-        ul {
-            margin: 8px 0 16px 20px;
-        }
-        li {
-            margin-bottom: 4px;
-        }
 
-        /* HERO */
-        .hero-card {
-            background: #0f172a;
-            color: #e5e7eb;
-            padding: 40px 28px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(15,23,42,0.35);
-        }
-        .hero-tagline {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #38bdf8;
-            margin-bottom: 8px;
-        }
-        .hero-buttons {
-            margin-top: 20px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 18px;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            border: 1px solid transparent;
-        }
-        .btn-primary {
-            background: #38bdf8;
-            color: #0f172a;
-            border-color: #38bdf8;
-        }
-        .btn-secondary {
-            background: transparent;
-            color: #e5e7eb;
-            border-color: #64748b;
-        }
-        .btn-primary:hover {
-            background: #0ea5e9;
-            border-color: #0ea5e9;
-        }
-        .btn-secondary:hover {
-            border-color: #e5e7eb;
-        }
-
-        /* TARGETES / GRID */
+        /* TARGETES PREMIUM */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
             margin-top: 12px;
         }
+
         .card {
             background: #ffffff;
             border-radius: 12px;
             padding: 16px 18px;
             box-shadow: 0 2px 10px rgba(15,23,42,0.08);
+            min-height: 120px;
+        }
+
+        /* SEPARADORS */
+        .separator {
+            height: 2px;
+            background: #e2e8f0;
+            margin: 40px auto;
+            width: 100%;
+            max-width: 960px;
+        }
+
+        /* BOTÓ TORNAR AMUNT */
+        #top-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
 
         footer {
@@ -164,227 +180,269 @@
             font-size: 13px;
             color: #6b7280;
         }
-
-        @media (max-width: 640px) {
-            nav ul {
-                flex-wrap: wrap;
-                gap: 16px;
-            }
-            .hero-card {
-                padding: 28px 20px;
-            }
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- MENÚ SUPERIOR PREMIUM -->
+    <!-- MENÚ PREMIUM COMPLET -->
     <nav>
-        <ul>
+        <ul class="menu">
             <li class="brand">EARLY</li>
+
             <li><a href="#inici" class="nav-link">Inici</a></li>
             <li><a href="#que-es" class="nav-link">Què és</a></li>
             <li><a href="#arquitectura" class="nav-link">Arquitectura</a></li>
-            <li><a href="#documentacio" class="nav-link">Documentació</a></li>
-            <li><a href="#demo" class="nav-link">Demo</a></li>
             <li><a href="#faq" class="nav-link">FAQ</a></li>
             <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+
+            <!-- LOCALS COMERCIALS -->
+            <li class="submenu">
+                <a class="nav-link">Locals comercials ▾</a>
+                <ul>
+                    <li><a href="#locals-per-viure">Per viure</a></li>
+                    <li><a href="#locals-cedula">Per demanar cèdula</a></li>
+                </ul>
+            </li>
+
+            <!-- VIVIENDA -->
+            <li class="submenu">
+                <a class="nav-link">Vivienda ▾</a>
+                <ul>
+                    <li><a href="#vivienda-oportunitats">Oportunitats</a></li>
+                    <li><a href="#vivienda-chollos">Chollos</a></li>
+                    <li><a href="#vivienda-particulars">Particulars</a></li>
+                    <li><a href="#vivienda-compra-venda">Compra i venda</a></li>
+                    <li><a href="#vivienda-tipus">Classificació per tipus</a></li>
+                    <li><a href="#vivienda-metres">Classificació per metres</a></li>
+                </ul>
+            </li>
+
+            <!-- ALTRES OPORTUNITATS -->
+            <li class="submenu">
+                <a class="nav-link">Altres oportunitats ▾</a>
+                <ul>
+                    <li><a href="#tipus1">Microhabitatges modulars</a></li>
+                    <li><a href="#tipus2">Planta baixa reconvertida</a></li>
+                    <li><a href="#tipus3">Tiny houses</a></li>
+                    <li><a href="#tipus4">Rehabilitació integral</a></li>
+                    <li><a href="#tipus5">Estudis / lofts</a></li>
+                    <li><a href="#tipus6">Cohabitatge cooperatiu</a></li>
+                    <li><a href="#tipus7">Semisoterranis legalitzats</a></li>
+                    <li><a href="#subhasta">Subhasta</a></li>
+                    <li><a href="#inquilí">Amb inquilí dins</a></li>
+                </ul>
+            </li>
+
             <li><a href="#locals" class="nav-link">Locals EARLY</a></li>
             <li><a href="#contacte" class="nav-link">Contacte</a></li>
         </ul>
     </nav>
 
-    <!-- HERO -->
+    <!-- PORTADA PREMIUM -->
     <section id="inici">
-        <div class="hero-card">
-            <div class="hero-tagline">Sistema d’Oportunitats Immobiliàries — Cicle Complet Tancat</div>
-            <h1>EARLY</h1>
-            <p>
-                Sistema institucional dissenyat per detectar, validar i presentar oportunitats immobiliàries
-                en menys d’un minut, amb arquitectura tècnica, cicle modal, validació adversa, restauració
-                de cadència i clausura institucional.
-            </p>
-            <div class="hero-buttons">
-                <a href="#documentacio" class="btn btn-primary">Documentació</a>
-                <a href="#demo" class="btn btn-secondary">Demo del sistema</a>
-            </div>
-        </div>
+        <h1>EARLY</h1>
     </section>
 
-    <!-- QUÈ ÉS -->
-    <section id="que-es">
-        <h2>Què és EARLY?</h2>
-        <p>
-            EARLY és un sistema institucional dissenyat per detectar, validar i presentar oportunitats
-            immobiliàries en menys d’un minut. El projecte integra arquitectura tècnica, cicle modal,
-            validació adversa, restauració de cadència i clausura institucional.
-        </p>
-    </section>
+    <div class="separator"></div>
 
-    <!-- ARQUITECTURA -->
-    <section id="arquitectura">
-        <h2>Arquitectura del Sistema</h2>
+    <!-- SECCIONS BÀSIQUES -->
+    <section id="que-es"><h2>Què és EARLY?</h2></section>
+    <section id="arquitectura"><h2>Arquitectura</h2></section>
+    <section id="faq"><h2>FAQ</h2></section>
+    <section id="roadmap"><h2>Roadmap</h2></section>
 
+    <div class="separator"></div>
+
+    <!-- LOCALS COMERCIALS -->
+    <section id="locals-per-viure">
+        <h2>Locals per viure</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Ingesta i Detecció</h3>
-                <p>Captura de fluxos d’oportunitats immobiliàries.</p>
-            </div>
-            <div class="card">
-                <h3>Cicle Modal</h3>
-                <p>Classificació i priorització en temps quasi real.</p>
-            </div>
-            <div class="card">
-                <h3>Validació Adversa</h3>
-                <p>Contrastos adversos per descartar falsos positius.</p>
-            </div>
-            <div class="card">
-                <h3>Restauració de Cadència</h3>
-                <p>Equilibri del ritme operatiu.</p>
-            </div>
-            <div class="card">
-                <h3>Clausura Institucional</h3>
-                <p>Presentació formal i traçabilitat completa.</p>
-            </div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
         </div>
     </section>
 
-    <!-- DOCUMENTACIÓ -->
-    <section id="documentacio">
-        <h2>Documentació</h2>
-        <p>
-            La documentació d’EARLY descriu el cicle complet, els components tècnics, els fluxos institucionals
-            i els criteris de validació.
-        </p>
+    <section id="locals-cedula">
+        <h2>Locals per demanar cèdula</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
     </section>
 
-    <!-- DEMO -->
-    <section id="demo">
-        <h2>Demo del Sistema</h2>
-        <p>
-            La demo mostra el recorregut complet d’una oportunitat immobiliària dins d’EARLY.
-        </p>
+    <div class="separator"></div>
+
+    <!-- VIVIENDA -->
+    <section id="vivienda-oportunitats">
+        <h2>Oportunitats</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq">
-        <h2>FAQ — Preguntes Freqüents</h2>
-
-        <h3>Quant tarda EARLY?</h3>
-        <p>Menys d’un minut.</p>
-
-        <h3>Quina tecnologia utilitza?</h3>
-        <p>Arquitectura modal i validació adversa.</p>
-
-        <h3>És escalable?</h3>
-        <p>Operatiu en entorns institucionals.</p>
+    <section id="vivienda-chollos">
+        <h2>Chollos</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
     </section>
 
-    <!-- ROADMAP -->
-    <section id="roadmap">
-        <h2>Roadmap del Sistema</h2>
-        <ul>
-            <li><strong>Fase 1</strong> — Motor modal.</li>
-            <li><strong>Fase 2</strong> — Validació adversa.</li>
-            <li><strong>Fase 3</strong> — Frontend institucional.</li>
-            <li><strong>Fase 4</strong> — Clausura del cicle.</li>
-        </ul>
+    <section id="vivienda-particulars">
+        <h2>Particulars</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
     </section>
+
+    <section id="vivienda-compra-venda">
+        <h2>Compra i venda</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="vivienda-tipus">
+        <h2>Classificació per tipus</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="vivienda-metres">
+        <h2>Classificació per metres</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- ALTRES OPORTUNITATS -->
+    <section id="tipus1">
+        <h2>Microhabitatges modulars</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="tipus2">
+        <h2>Planta baixa reconvertida</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="tipus3">
+        <h2>Tiny houses</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="tipus4">
+        <h2>Rehabilitació integral</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="tipus5">
+        <h2>Estudis / lofts</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="tipus6">
+        <h2>Cohabitatge cooperatiu</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="tipus7">
+        <h2>Semisoterranis legalitzats</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="subhasta">
+        <h2>Subhasta</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="inquilí">
+        <h2>Amb inquilí dins</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
 
     <!-- LOCALS EARLY -->
     <section id="locals">
-        <h2>Projecte Locals Convertibles – EARLY</h2>
-        <p>
-            App senzilla dins l’ecosistema EARLY per gestionar la cerca, classificació i contacte de locals
-            convertibles a habitatge a Sant Cugat, utilitzant portals fiables (Idealista, Habitaclia, Fotocasa)
-            i criteris tècnics de viabilitat.
-        </p>
-
-        <h3>Locals econòmics</h3>
-        <p>Locals amb preus per sota de la mitjana del municipi, prioritzant:</p>
-        <ul>
-            <li>Renda mensual baixa</li>
-            <li>Superfície mínima viable (≥ 40 m²)</li>
-            <li>Planta baixa</li>
-            <li>Façana accessible</li>
-        </ul>
-
-        <h3>Locals amb possibilitat de canvi d’ús</h3>
-        <p>Locals que compleixen o poden complir:</p>
-        <ul>
-            <li>Façana ≥ 3 metres</li>
-            <li>Ventilació natural</li>
-            <li>Alçada ≥ 2,5 m</li>
-            <li>Distribució adaptable</li>
-        </ul>
-
-        <h3>Locals amb cèdula o sol·licitables</h3>
-        <p>Locals que ja tenen o poden obtenir:</p>
-        <ul>
-            <li>Cèdula d’habitabilitat vigent</li>
-            <li>Projecte tècnic de canvi d’ús</li>
-            <li>Informe favorable d’arquitecte</li>
-        </ul>
-
-        <h3>Paraules clau per a la cerca</h3>
-        <p>Utilitzades en portals com Idealista, Habitaclia i Fotocasa:</p>
-        <ul>
-            <li>"local comercial"</li>
-            <li>"planta baixa"</li>
-            <li>"loft"</li>
-            <li>"baixos convertibles"</li>
-            <li>"apto per canvi d’ús"</li>
-            <li>"local amb ventilació"</li>
-            <li>"local diàfan"</li>
-        </ul>
-
-        <h3>Fitxa tipus Habitaclia</h3>
-        <p>Estructura de fitxa que EARLY genera per cada local:</p>
-        <ul>
-            <li>Nom del carrer / zona</li>
-            <li>Preu mensual</li>
-            <li>Metres quadrats</li>
-            <li>Tipus de façana</li>
-            <li>Ventilació</li>
-            <li>Possibilitat de canvi d’ús (Sí / Pot ser / No)</li>
-            <li>Cèdula d’habitabilitat (Sí / No / Sol·licitable)</li>
-            <li>Enllaç a l’anunci</li>
-            <li>Mail per contactar agent</li>
-        </ul>
-
-        <h3>Flux dins l’app EARLY</h3>
-        <ul>
-            <li><strong>Cerca automàtica</strong> — Cerca automàtica a portals amb paraules clau definides per EARLY.</li>
-            <li><strong>Classificació automàtica</strong> — Classificació segons els tres blocs principals: econòmics, canvi d’ús, cèdula.</li>
-            <li><strong>Fitxa resum</strong> — Generació de fitxa resum per cada local detectat amb criteris tècnics integrats.</li>
-            <li><strong>Contacte i arxiu intern</strong> — Botó de contacte amb l’agent (mail) i arxiu intern per guardar locals favorits.</li>
-        </ul>
-
-        <p>
-            <em>
-                Estat del projecte: classificació definida, paraules clau establertes, estructura de fitxa preparada
-                i portals principals confirmats. Proper pas: integrar la cerca automatitzada i generar les primeres
-                fitxes amb dades reals de Sant Cugat.
-            </em>
-        </p>
+        <h2>Locals EARLY</h2>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
     </section>
+
+    <div class="separator"></div>
 
     <!-- CONTACTE -->
     <section id="contacte">
         <h2>Contacte</h2>
-        <p>Per consultes sobre EARLY — Sistema d’Oportunitats Immobiliàries:</p>
-
-        <p><strong>Nom</strong></p>
-        <p><strong>Email</strong></p>
-        <p><strong>Missatge</strong></p>
-        <button>Enviar</button>
+        <div class="grid">
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        EARLY — Sistema d’Oportunitats Immobiliàries · Cicle Complet Tancat · Versió institucional
-    </footer>
+    <footer>EARLY — Sistema d’Oportunitats Immobiliàries</footer>
+
+    <!-- BOTÓ TORNAR AMUNT -->
+    <div id="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        Amunt
+    </div>
 
 </body>
 </html>
