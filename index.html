@@ -4,88 +4,87 @@
   <meta charset="UTF-8" />
   <title>EARLY – Sistema institucional modal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="EARLY · Sistema institucional modal · Predicción territorial, oportunidades, repoblación y simulación 2030 en España." />
 
   <style>
     :root {
-      --bg: #05060a;
-      --card: #12141d;
-      --accent: #3fbf7f;
-      --accent-soft: #2b8f60;
+      --bg1: #0a1f24;
+      --bg2: #0d3c46;
+      --bg3: #0fbf9a;
       --text: #f5f5f5;
       --muted: #9fa4b5;
-      --danger: #ff4b5c;
-      --warn: #f0b429;
-      --border: #262938;
+      --accent: #0fbf9a;
+      --border: #1a2a2d;
       --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      font-family: var(--font);
-      background: radial-gradient(circle at top, #1b1f30 0, #05060a 55%);
-      color: var(--text);
       margin: 0;
-      padding: 0;
-    }
-
-    header {
-      padding: 20px 28px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(5, 6, 10, 0.9);
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
-    }
-
-    nav a {
-      font-size: 0.8rem;
-      text-decoration: none;
+      font-family: var(--font);
+      background: linear-gradient(160deg, var(--bg1), var(--bg2), var(--bg3));
       color: var(--text);
-      padding: 6px 10px;
+    }
+
+    /* PORTADA */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .hero a {
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #000;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
     }
 
-    nav a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
+    /* COS COMPLET */
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-      gap: 22px;
+      padding: 40px 20px;
     }
 
     section {
-      margin-bottom: 16px;
-      border-radius: 14px;
-      background: linear-gradient(145deg, #11131c, #171927);
+      background: rgba(10, 31, 36, 0.6);
       border: 1px solid var(--border);
-      padding: 14px 16px;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(6px);
     }
 
     h2 {
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       text-transform: uppercase;
       color: var(--accent);
+      margin-bottom: 10px;
     }
 
     h3 {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--muted);
       text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
     ul {
@@ -94,10 +93,10 @@
     }
 
     li {
-      font-size: 0.82rem;
       display: flex;
       justify-content: space-between;
-      padding: 2px 0;
+      padding: 4px 0;
+      font-size: 0.85rem;
     }
 
     .label {
@@ -108,153 +107,125 @@
       text-align: right;
     }
 
-    .route {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .route:hover {
-      text-decoration: underline;
-    }
-
     .tag {
-      font-size: 0.72rem;
       padding: 2px 6px;
       border-radius: 999px;
       border: 1px solid var(--border);
+      font-size: 0.75rem;
     }
 
-    .tag-green { color: var(--accent); border-color: var(--accent-soft); }
-    .tag-yellow { color: var(--warn); border-color: var(--warn); }
-    .tag-red { color: var(--danger); border-color: var(--danger); }
+    .tag-green { color: #0fbf9a; border-color: #0fbf9a; }
     .tag-blue { color: #4aa8ff; border-color: #4aa8ff; }
+    .tag-yellow { color: #f0b429; border-color: #f0b429; }
+    .tag-red { color: #ff4b5c; border-color: #ff4b5c; }
     .tag-grey { color: var(--muted); border-color: var(--border); }
 
     footer {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px 28px;
-      font-size: 0.78rem;
+      text-align: center;
+      padding: 20px;
       color: var(--muted);
-      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div>
-      <h1>EARLY · Sistema institucional modal</h1>
-      <span>España · Predicción territorial · Oportunidades · Repoblación · Simulación 2030</span>
-    </div>
 
-    <nav>
-      <a href="#mapa-institucional">Mapa</a>
-      <a href="#prediccion">Predicción</a>
-      <a href="#oportunidades">Oportunidades</a>
-      <a href="#repoblacion">Repoblación</a>
-      <a href="#economia">Economía</a>
-      <a href="#simulacion">Simulación 2030</a>
-      <a href="#intel">Inteligencia</a>
-      <a href="#seguridad">Seguridad</a>
-      <a href="#legal">LOPD / RGPD</a>
-      <a href="#api">API</a>
-    </nav>
-  </header>
+  <!-- PORTADA -->
+  <div class="hero">
+    <h1>EARLY</h1>
+    <p>Sistema Institucional Modal · España</p>
+    <a href="#contenido">Entrar</a>
+  </div>
 
-  <main>
-    <div>
-      <section id="mapa-institucional">
-        <h2>Mapa institucional completo</h2>
-        <h3>Descripción</h3>
-        <ul>
-          <li><span class="label">Cobertura:</span><span class="value tag tag-green">España completa</span></li>
-          <li><span class="label">Capas:</span><span class="value tag tag-blue">Modal · Territorial · Económica · Predictiva · Seguridad · Legal</span></li>
-          <li><span class="label">Ruta web:</span><span class="value"><a class="route" href="/mapa-institucional">GET /mapa-institucional</a></span></li>
-          <li><span class="label">API:</span><span class="value"><a class="route" href="/api/mapa-institucional">GET /api/mapa-institucional</a></span></li>
-        </ul>
-      </section>
+  <!-- COS COMPLET -->
+  <main id="contenido">
 
-      <section id="prediccion">
-        <h2>Predicción modal</h2>
-        <h3>Horizontes</h3>
-        <ul>
-          <li><span class="label">72 horas:</span><span class="value"><span class="tag tag-green">Activación inmediata</span><a class="route" href="/api/prediccion/72h">GET /api/prediccion/72h</a></span></li>
-          <li><span class="label">7 días:</span><span class="value"><span class="tag tag-green">Semana</span><a class="route" href="/api/prediccion/7d">GET /api/prediccion/7d</a></span></li>
-          <li><span class="label">30 días:</span><span class="value"><span class="tag tag-blue">Mes</span><a class="route" href="/api/prediccion/30d">GET /api/prediccion/30d</a></span></li>
-          <li><span class="label">Anual:</span><span class="value"><span class="tag tag-yellow">Año completo</span><a class="route" href="/api/prediccion/anual">GET /api/prediccion/anual</a></span></li>
-        </ul>
-      </section>
+    <section id="mapa-institucional">
+      <h2>Mapa institucional completo</h2>
+      <h3>Descripción</h3>
+      <ul>
+        <li><span class="label">Cobertura:</span><span class="value tag tag-green">España completa</span></li>
+        <li><span class="label">Capas:</span><span class="value tag tag-blue">Modal · Territorial · Económica · Predictiva · Seguridad · Legal</span></li>
+      </ul>
+    </section>
 
-      <section id="oportunidades">
-        <h2>Sistema de oportunidades prioritarias</h2>
-        <h3>Tipos</h3>
-        <ul>
-          <li><span class="label">Emergente:</span><span class="value tag tag-green">72h–7d</span></li>
-          <li><span class="label">Latente:</span><span class="value tag tag-blue">Detectada · No visible</span></li>
-          <li><span class="label">Oculta:</span><span class="value tag tag-blue">Fuera de portales</span></li>
-          <li><span class="label">Estructural:</span><span class="value tag tag-yellow">Impacto territorial</span></li>
-        </ul>
-      </section>
+    <section id="prediccion">
+      <h2>Predicción modal</h2>
+      <h3>Horizontes</h3>
+      <ul>
+        <li><span class="label">72 horas:</span><span class="value tag tag-green">Activación inmediata</span></li>
+        <li><span class="label">7 días:</span><span class="value tag tag-green">Semana</span></li>
+        <li><span class="label">30 días:</span><span class="value tag tag-blue">Mes</span></li>
+        <li><span class="label">Anual:</span><span class="value tag tag-yellow">Año completo</span></li>
+      </ul>
+    </section>
 
-      <section id="repoblacion">
-        <h2>Mapa de repoblación</h2>
-        <h3>Pueblos</h3>
-        <ul>
-          <li><span class="label">Repoblación inmediata:</span><span class="value tag tag-green">≤ 30 días</span></li>
-          <li><span class="label">Repoblación sostenida:</span><span class="value tag tag-yellow">Tendencia anual</span></li>
-          <li><span class="label">Repoblación profunda:</span><span class="value tag tag-blue">Transformación</span></li>
-        </ul>
-      </section>
+    <section id="oportunidades">
+      <h2>Oportunidades prioritarias</h2>
+      <ul>
+        <li><span class="label">Emergente:</span><span class="value tag tag-green">72h–7d</span></li>
+        <li><span class="label">Latente:</span><span class="value tag tag-blue">Detectada</span></li>
+        <li><span class="label">Oculta:</span><span class="value tag tag-blue">Fuera de portales</span></li>
+        <li><span class="label">Estructural:</span><span class="value tag tag-yellow">Impacto territorial</span></li>
+      </ul>
+    </section>
 
-      <section id="economia">
-        <h2>Economía · Presión · Pagos</h2>
-        <h3>Pagos Stripe ↔ La Caixa</h3>
-        <ul>
-          <li><span class="label">Pago único:</span><span class="value"><a class="route" href="/api/pagos/stripe/charge">POST /api/pagos/stripe/charge</a></span></li>
-          <li><span class="label">Suscripción:</span><span class="value"><a class="route" href="/api/pagos/stripe/subscription">POST /api/pagos/stripe/subscription</a></span></li>
-        </ul>
-      </section>
+    <section id="repoblacion">
+      <h2>Repoblación</h2>
+      <ul>
+        <li><span class="label">Inmediata:</span><span class="value tag tag-green">≤ 30 días</span></li>
+        <li><span class="label">Sostenida:</span><span class="value tag tag-yellow">Tendencia anual</span></li>
+        <li><span class="label">Profunda:</span><span class="value tag tag-blue">Transformación</span></li>
+      </ul>
+    </section>
 
-      <section id="simulacion">
-        <h2>Simulación 2030 · EARLY‑SIM</h2>
-        <ul>
-          <li><span class="label">Modal 2030:</span><span class="value"><a class="route" href="/api/sim/modal/2030">GET /api/sim/modal/2030</a></span></li>
-          <li><span class="label">Repoblación:</span><span class="value"><a class="route" href="/api/sim/repoblacion">GET /api/sim/repoblacion</a></span></li>
-          <li><span class="label">Economía 2030:</span><span class="value"><a class="route" href="/api/sim/economia">GET /api/sim/economia</a></span></li>
-        </ul>
-      </section>
-    </div>
+    <section id="economia">
+      <h2>Economía</h2>
+      <ul>
+        <li><span class="label">Presión económica:</span><span class="value tag tag-grey">Mapa nacional</span></li>
+        <li><span class="label">Riesgo:</span><span class="value tag tag-red">Zonas en congelación</span></li>
+        <li><span class="label">Oportunidad:</span><span class="value tag tag-green">Rendimiento potencial</span></li>
+      </ul>
+    </section>
 
-    <div>
-      <section id="intel">
-        <h2>EARLY‑INTEL · Inteligencia institucional</h2>
-        <ul>
-          <li><span class="label">Predicción ML:</span><span class="value"><a class="route" href="/api/intel/prediccion/{territorio}">GET /api/intel/prediccion/{territorio}</a></span></li>
-          <li><span class="label">Recomendación:</span><span class="value"><a class="route" href="/api/intel/recomendacion">GET /api/intel/recomendacion</a></span></li>
-        </ul>
-      </section>
+    <section id="simulacion">
+      <h2>Simulación 2030</h2>
+      <ul>
+        <li><span class="label">Modal 2030:</span><span class="value tag tag-green">Activa</span></li>
+        <li><span class="label">Repoblación:</span><span class="value tag tag-blue">Activa</span></li>
+        <li><span class="label">Economía:</span><span class="value tag tag-yellow">Activa</span></li>
+      </ul>
+    </section>
 
-      <section id="seguridad">
-        <h2>Seguridad</h2>
-        <ul>
-          <li><span class="label">Estado:</span><span class="value"><a class="route" href="/api/status">GET /api/status</a></span></li>
-        </ul>
-      </section>
+    <section id="intel">
+      <h2>EARLY‑INTEL</h2>
+      <ul>
+        <li><span class="label">Predicción ML:</span><span class="value">/api/intel/prediccion</span></li>
+        <li><span class="label">Recomendación:</span><span class="value">/api/intel/recomendacion</span></li>
+      </ul>
+    </section>
 
-      <section id="legal">
-        <h2>Leyes y LOPD</h2>
-        <ul>
-          <li><span class="label">Privacidad:</span><span class="value"><a class="route" href="/legal/privacidad">GET /legal/privacidad</a></span></li>
-          <li><span class="label">Términos:</span><span class="value"><a class="route" href="/legal/terminos">GET /legal/terminos</a></span></li>
-        </ul>
-      </section>
-    </div>
+    <section id="seguridad">
+      <h2>Seguridad</h2>
+      <ul>
+        <li><span class="label">Estado:</span><span class="value">/api/status</span></li>
+      </ul>
+    </section>
+
+    <section id="legal">
+      <h2>LOPD / RGPD</h2>
+      <ul>
+        <li><span class="label">Privacidad:</span><span class="value">/legal/privacidad</span></li>
+        <li><span class="label">Términos:</span><span class="value">/legal/terminos</span></li>
+      </ul>
+    </section>
+
   </main>
 
   <footer>
-    <p>EARLY · Sistema institucional modal · Índice ejecutivo HTML.</p>
-    <p><code>Versión institucional · España · Simulación 2030 activa</code></p>
+    EARLY · Sistema institucional modal · España
   </footer>
+
 </body>
 </html>
